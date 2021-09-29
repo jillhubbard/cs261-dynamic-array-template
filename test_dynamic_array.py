@@ -28,7 +28,7 @@ class TestDynamicArray(unittest.TestCase):
     #     The default initial capacity is ten.
     #     """
     #     a = DynamicArray()
-    #     self.assertEqual(20, a.size)
+    #     self.assertEqual(10, a.size)
 
     # def test_initially_empty(self):
     #     """
