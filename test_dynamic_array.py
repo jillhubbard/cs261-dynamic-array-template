@@ -16,7 +16,7 @@ class TestDynamicArray(unittest.TestCase):
 
     def test_instantiation(self):
         """
-        A DynamicArray exists.
+        Test 1: A DynamicArray exists.
         """
         try:
             DynamicArray()
@@ -25,21 +25,21 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_default_initial_capacity(self):
     #     """
-    #     The default initial capacity is ten.
+    #     Test 2: The default initial capacity is ten.
     #     """
     #     a = DynamicArray()
     #     self.assertEqual(10, a.capacity)
 
     # def test_initially_empty(self):
     #     """
-    #     A dynamic array is initially empty.
+    #     Test 3: A dynamic array is initially empty.
     #     """
     #     a = DynamicArray()
     #     self.assertTrue(a.is_empty())
 
     # def test_initial_length(self):
     #     """
-    #     A dynamic array has an initial length of 0.
+    #     Test 4: A dynamic array has an initial length of 0.
     #     """
     #     a = DynamicArray()
     #     self.assertEqual(0, len(a))
@@ -52,7 +52,7 @@ class TestDynamicArray(unittest.TestCase):
     # # Hint: Do the naive thing.
     # def test_append_one_value_to_empty(self):
     #     """
-    #     A single value can be appended to and retrieved from a dynamic array.
+    #     Test 5: A single value can be appended to and retrieved from a dynamic array.
     #     """
     #     a = DynamicArray()
     #     a.append(64)
@@ -66,7 +66,7 @@ class TestDynamicArray(unittest.TestCase):
     # # # and move on.
     # def test_append_two_values(self):
     #     """
-    #     Two values can be appended to and retrieved from a dynamic array.
+    #     Test 6: Two values can be appended to and retrieved from a dynamic array.
     #     """
     #     a = DynamicArray()
     #     a.append(18)
@@ -80,7 +80,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_data_property(self):
     #     """
-    #     Has an internal `data` property that is a numpy ndarray.
+    #     Test 7: Has an internal `data` property that is a numpy ndarray.
     #     """
     #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
     #     a = DynamicArray()
@@ -88,7 +88,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_data_object_references(self):
     #     """
-    #     Internal data array stores object references.
+    #     Test 8: Internal data array stores object references.
     #     """
     #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
     #     a = DynamicArray()
@@ -96,7 +96,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_data_capacity(self):
     #     """
-    #     Length of the data array is the same as the DynamicArray capacity.
+    #     Test 9: Length of the data array is the same as the DynamicArray capacity.
     #     """
     #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
     #     a = DynamicArray()
@@ -108,7 +108,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_append_first_value_to_internal_data(self):
     #     """
-    #     Appending the first value in an empty DynamicArray puts it in the right
+    #     Test 10: Appending the first value in an empty DynamicArray puts it in the right
     #     location in the internal data array.
     #     """
     #     a = DynamicArray()
@@ -117,7 +117,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_retrieve_first_appended_value(self):
     #     """
-    #     The first element appended to the DynamicArray is can be retrieved with
+    #     Test 11: The first element appended to the DynamicArray is can be retrieved with
     #     index 0.
     #     """
     #     a = DynamicArray()
@@ -131,14 +131,14 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_next_index(self):
     #     """
-    #     Has a next_index property, which is initially 0.
+    #     Test 12: Has a next_index property, which is initially 0.
     #     """
     #     a = DynamicArray()
     #     self.assertEqual(0, a.next_index)
 
     # def test_next_index(self):
     #     """
-    #     After appending the first value, next_index becomes 1.
+    #     Test 13: After appending the first value, next_index becomes 1.
     #     """
     #     a = DynamicArray()
     #     a.append('FAKE')
@@ -146,7 +146,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_appending_two_values_internal(self):
     #     """
-    #     Appending two values stores them in the first and second positions in
+    #     Test 14: Appending two values stores them in the first and second positions in
     #     the internal data array.
     #     """
     #     a = DynamicArray()
@@ -159,7 +159,7 @@ class TestDynamicArray(unittest.TestCase):
     # # the other uncommented test. If this is confusing, just ignore this comment.
     # def test_append_two_values_again(self):
     #     """
-    #     Two values can be appended to and retrieved from a dynamic array.
+    #     Test 15: Two values can be appended to and retrieved from a dynamic array.
     #     """
     #     a = DynamicArray()
     #     a.append(8)
@@ -169,7 +169,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_append_four_values(self):
     #     """
-    #     Three values can be appended to and retrieved from a dynamic array.
+    #     Test 16: Three values can be appended to and retrieved from a dynamic array.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -187,7 +187,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_is_empty(self):
     #     """
-    #     A dynamic array containing data is not empty.
+    #     Test 17: A dynamic array containing data is not empty.
     #     """
     #     a = DynamicArray()
     #     self.assertTrue(a.is_empty())
@@ -196,7 +196,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_clear(self):
     #     """
-    #     A cleared dynamic array is empty and has a length of 0.
+    #     Test 18: A cleared dynamic array is empty and has a length of 0.
     #     """
     #     a = DynamicArray()
     #     a.append('FAKE')
@@ -208,7 +208,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_len(self):
     #     """
-    #     The length of a dynamic array is equal to the number of elements appended.
+    #     Test 19: The length of a dynamic array is equal to the number of elements appended.
     #     """
     #     a = DynamicArray()
     #     a.append('FAKE')
@@ -221,7 +221,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_negative_index(self):
     #     """
-    #     Accessing with a negative index raises an IndexError
+    #     Test 20: Accessing with a negative index raises an IndexError
     #     """
     #     a = DynamicArray()
     #     try:
@@ -232,7 +232,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_large_index(self):
     #     """
-    #     Accessing with an index greater than or equal to the last index raises an IndexError
+    #     Test 21: Accessing with an index greater than or equal to the last index raises an IndexError
     #     """
     #     a = DynamicArray()
     #     try:
@@ -247,7 +247,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_pop(self):
     #     """
-    #     Popping removes and returns the last element
+    #     Test 22: Popping removes and returns the last element
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -259,7 +259,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_pop_empty(self):
     #     """
-    #     Popping from an empty list raises an IndexError: pop from empty array
+    #     Test 23: Popping from an empty list raises an IndexError: pop from empty array
     #     """
     #     a = DynamicArray()
     #     try:
@@ -274,7 +274,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_delete_last(self):
     #     """
-    #     Deleting the last element removes it from the dynamic array.
+    #     Test 24: Deleting the last element removes it from the dynamic array.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -286,7 +286,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_delete_invalid_index(self):
     #     """
-    #     Deleting an out of bounds index raises an IndexError: index out of range
+    #     Test 25: Deleting an out of bounds index raises an IndexError: index out of range
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -301,7 +301,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_delete_first(self):
     #     """
-    #     Deleting the first element shifts remaining elements to the left.
+    #     Test 26: Deleting the first element shifts remaining elements to the left.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -314,7 +314,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_delete_middle(self):
     #     """
-    #     Deleting from the middle shifts remaining elements to the left.
+    #     Test 27: Deleting from the middle shifts remaining elements to the left.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -327,7 +327,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_delete_empty(self):
     #     """
-    #     Deleting from an empty array raises an IndexError: index out of range
+    #     Test 28: Deleting from an empty array raises an IndexError: index out of range
     #     """
     #     a = DynamicArray()
     #     try:
@@ -342,7 +342,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_end(self):
     #     """
-    #     Inserting after the last element adds the element to the end of the array.
+    #     Test 29: Inserting after the last element adds the element to the end of the array.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -355,7 +355,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_invalid_index(self):
     #     """
-    #     Inserting an out of bounds index raises an IndexError: index out of range.
+    #     Test 30: Inserting an out of bounds index raises an IndexError: index out of range.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -370,7 +370,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_first(self):
     #     """
-    #     Inserting a new first element shifts remaining elements to the right.
+    #     Test 31: Inserting a new first element shifts remaining elements to the right.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -385,7 +385,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_middle(self):
     #     """
-    #     Inserting into the middle shifts elements to the right, to the right.
+    #     Test 32: Inserting into the middle shifts elements to the right, to the right.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -400,7 +400,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_empty(self):
     #     """
-    #     Inserting into an empty array at position 0 is ok.
+    #     Test 33: Inserting into an empty array at position 0 is ok.
     #     """
     #     a = DynamicArray()
     #     a.insert(0, 'foo')
@@ -413,14 +413,14 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_empty_not_full(self):
     #     """
-    #     An empty dynamic array is not full.
+    #     Test 34: An empty dynamic array is not full.
     #     """
     #     a = DynamicArray()
     #     self.assertFalse(a.is_full())
 
     # def test_less_than_capacity(self):
     #     """
-    #     A dynamic array with a number of elements less than capacityis not full.
+    #     Test 35: A dynamic array with a number of elements less than capacityis not full.
     #     """
     #     a = DynamicArray()
     #     a.append('fee')
@@ -430,7 +430,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_full(self):
     #     """
-    #     A dynamic array is full when the number of elements fills its internal data array
+    #     Test 36: A dynamic array is full when the number of elements fills its internal data array
     #     """
     #     a = DynamicArray()
     #     for _ in range(0, a.capacity):
@@ -446,7 +446,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_append_to_full(self):
     #     """
-    #     A full dynamic array expands to accommodate a new appended element.
+    #     Test 37: A full dynamic array expands to accommodate a new appended element.
     #     """
     #     a = DynamicArray()
     #     for _ in range(0, a.capacity):
@@ -456,7 +456,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_new_capacity(self):
     #     """
-    #     When expanding, a dynamic array doubles its capacity
+    #     Test 38: When expanding, a dynamic array doubles its capacity
     #     """
     #     a = DynamicArray()
     #     for _ in range(0, a.capacity):
@@ -467,7 +467,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_insert_to_full(self):
     #     """
-    #     A full dynamic array expands to accommodate a new inserted element.
+    #     Test 39: A full dynamic array expands to accommodate a new inserted element.
     #     """
     #     a = DynamicArray()
     #     for i in range(0, a.capacity):
@@ -484,7 +484,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_max(self):
     #     """
-    #     Max method returns the largest value in the dynamic array.
+    #     Test 40: Max method returns the largest value in the dynamic array.
     #     """
     #     a = DynamicArray()
     #     for _ in range(0, 9):
@@ -495,7 +495,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_min(self):
     #     """
-    #     Min method returns the smallest value in the dynamic array.
+    #     Test 41: Min method returns the smallest value in the dynamic array.
     #     """
     #     a = DynamicArray()
     #     for _ in range(0, 9):
@@ -506,7 +506,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_sum(self):
     #     """
-    #     Sum method returns the sum of all values in the dynamic array.
+    #     Test 42: Sum method returns the sum of all values in the dynamic array.
     #     """
     #     a = DynamicArray()
     #     for val in range(10, 15):
@@ -515,7 +515,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_max_min_sum_of_empty(self):
     #     """
-    #     The max, min or sum of an empty dynamic array is None.
+    #     Test 43: The max, min or sum of an empty dynamic array is None.
     #     """
     #     a = DynamicArray()
     #     self.assertEqual(None, a.sum())
@@ -528,7 +528,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_linear_search(self):
     #     """
-    #     The linear search method returns the index of the first occurence of a
+    #     Test 44: The linear search method returns the index of the first occurence of a
     #     value value if it exists in the array, or None if it doesn't.
     #     """
     #     a = DynamicArray()
@@ -545,7 +545,7 @@ class TestDynamicArray(unittest.TestCase):
 
     # def test_binary_search(self):
     #     """
-    #     The binary search method returns the index of the first occurence of a
+    #     Test 45: The binary search method returns the index of the first occurence of a
     #     value value if it exists in the array, or None if it doesn't.
     #     """
     #     a = DynamicArray()
