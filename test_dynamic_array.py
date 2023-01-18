@@ -136,7 +136,7 @@ class TestDynamicArray(unittest.TestCase):
     #     a = DynamicArray()
     #     self.assertEqual(0, a.next_index)
 
-    # def test_next_index(self):
+    # def test_next_index_append(self):
     #     """
     #     Test 13: After appending the first value, next_index becomes 1.
     #     """
