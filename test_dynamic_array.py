@@ -82,7 +82,7 @@ class TestDynamicArray(unittest.TestCase):
     #     """
     #     Test 7: Has an internal `data` property that is a numpy ndarray.
     #     """
-    #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
+    #     import numpy as np # Hint: Get an error? Just `pip3 install numpy` or 'python -m pip install numpy'
     #     a = DynamicArray()
     #     self.assertEqual(np.ndarray, type(a.data))
 
