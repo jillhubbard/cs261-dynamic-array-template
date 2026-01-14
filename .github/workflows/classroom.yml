@@ -1,31 +1,530 @@
 name: Autograding Tests
-'on':
-- push
-- repository_dispatch
+
+on:
+  push:
+  repository_dispatch:
+
 permissions:
   checks: write
   actions: read
   contents: read
+
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Instantiation
-      id: instantiation
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Instantiation
-        setup-command: ''
-        command: python3 -m unittest discover -s tests_autograder -p "tests_all.py"
-        # command: python3 -m unittest tests_autograder/test_dynamic_array.TestDynamicArray.test_instantiation
-        timeout: 10
-        max-score: 1
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        INSTANTIATION_RESULTS: "${{steps.instantiation.outputs.result}}"
-      with:
-        runners: instantiation
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+    #   - name: Set up Python
+    #     uses: actions/setup-python@v5
+    #     with:
+    #       python-version: '3.11'
+
+    #   - name: Install dependencies
+    #     run: |
+    #       python -m pip install --upgrade pip
+    #       pip install numpy
+
+      - name: Instantiation
+        id: instantiation
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Instantiation
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_instantiation
+          timeout: 10
+          max-score: 1
+
+      - name: Default_Initial_Capacity
+        id: default_initial_capacity
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Default_Initial_Capacity
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_default_initial_capacity
+          timeout: 10
+          max-score: 1
+
+      - name: Initially_Empty
+        id: initially_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Initially_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_initially_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Initial_Length
+        id: initial_length
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Initial_Length
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_initial_length
+          timeout: 10
+          max-score: 1
+
+      - name: Append_One_Value_To_Empty
+        id: append_one_value_to_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_One_Value_To_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_one_value_to_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Append_Two_Values
+        id: append_two_values
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_Two_Values
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_two_values
+          timeout: 10
+          max-score: 1
+
+      - name: Data_Property
+        id: data_property
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Data_Property
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_data_property
+          timeout: 10
+          max-score: 1
+
+      - name: Data_Object_References
+        id: data_object_references
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Data_Object_References
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_data_object_references
+          timeout: 10
+          max-score: 1
+
+      - name: Data_Capacity
+        id: data_capacity
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Data_Capacity
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_data_capacity
+          timeout: 10
+          max-score: 1
+
+      - name: Append_First_Value_To_Internal_Data
+        id: append_first_value_to_internal_data
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_First_Value_To_Internal_Data
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_first_value_to_internal_data
+          timeout: 10
+          max-score: 1
+
+      - name: Retrieve_First_Appended_Value
+        id: retrieve_first_appended_value
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Retrieve_First_Appended_Value
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_retrieve_first_appended_value
+          timeout: 10
+          max-score: 1
+
+      - name: Next_Index
+        id: next_index
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Next_Index
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_next_index
+          timeout: 10
+          max-score: 1
+
+      - name: Next_Index_Append
+        id: next_index_append
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Next_Index_Append
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_next_index_append
+          timeout: 10
+          max-score: 1
+
+      - name: Appending_Two_Values_Internal
+        id: appending_two_values_internal
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Appending_Two_Values_Internal
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_appending_two_values_internal
+          timeout: 10
+          max-score: 1
+
+      - name: Append_Two_Values_Again
+        id: append_two_values_again
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_Two_Values_Again
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_two_values_again
+          timeout: 10
+          max-score: 1
+
+      - name: Append_Four_Values
+        id: append_four_values
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_Four_Values
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_four_values
+          timeout: 10
+          max-score: 1
+
+      - name: Is_Empty
+        id: is_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Is_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_is_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Clear
+        id: clear
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Clear
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_clear
+          timeout: 10
+          max-score: 1
+
+      - name: Len
+        id: len
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Len
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_len
+          timeout: 10
+          max-score: 1
+
+      - name: Negative_Index
+        id: negative_index
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Negative_Index
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_negative_index
+          timeout: 10
+          max-score: 1
+
+      - name: Large_Index
+        id: large_index
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Large_Index
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_large_index
+          timeout: 10
+          max-score: 1
+
+      - name: Pop
+        id: pop
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Pop
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_pop
+          timeout: 10
+          max-score: 1
+
+      - name: Pop_Empty
+        id: pop_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Pop_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_pop_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Delete_Last
+        id: delete_last
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Delete_Last
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_delete_last
+          timeout: 10
+          max-score: 1
+
+      - name: Delete_Invalid_Index
+        id: delete_invalid_index
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Delete_Invalid_Index
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_delete_invalid_index
+          timeout: 10
+          max-score: 1
+
+      - name: Delete_First
+        id: delete_first
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Delete_First
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_delete_first
+          timeout: 10
+          max-score: 1
+
+      - name: Delete_Middle
+        id: delete_middle
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Delete_Middle
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_delete_middle
+          timeout: 10
+          max-score: 1
+
+      - name: Delete_Empty
+        id: delete_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Delete_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_delete_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Insert_End
+        id: insert_end
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_End
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_end
+          timeout: 10
+          max-score: 1
+
+      - name: Insert_Invalid_Index
+        id: insert_invalid_index
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_Invalid_Index
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_invalid_index
+          timeout: 10
+          max-score: 1
+
+      - name: Insert_First
+        id: insert_first
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_First
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_first
+          timeout: 10
+          max-score: 1
+
+      - name: Insert_Middle
+        id: insert_middle
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_Middle
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_middle
+          timeout: 10
+          max-score: 1
+
+      - name: Insert_Empty
+        id: insert_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_empty
+          timeout: 10
+          max-score: 1
+
+      - name: Empty_Not_Full
+        id: empty_not_full
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Empty_Not_Full
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_empty_not_full
+          timeout: 10
+          max-score: 1
+
+      - name: Less_Than_Capacity
+        id: less_than_capacity
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Less_Than_Capacity
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_less_than_capacity
+          timeout: 10
+          max-score: 1
+
+      - name: Full
+        id: full
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Full
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_full
+          timeout: 30
+          max-score: 1
+
+      - name: Append_To_Full
+        id: append_to_full
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Append_To_Full
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_append_to_full
+          timeout: 30
+          max-score: 1
+
+      - name: New_Capacity
+        id: new_capacity
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: New_Capacity
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_new_capacity
+          timeout: 30
+          max-score: 1
+
+      - name: Insert_To_Full
+        id: insert_to_full
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Insert_To_Full
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_insert_to_full
+          timeout: 30
+          max-score: 1
+
+      - name: Max
+        id: max
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Max
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_max
+          timeout: 30
+          max-score: 1
+
+      - name: Min
+        id: min
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Min
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_min
+          timeout: 30
+          max-score: 1
+
+      - name: Sum
+        id: sum
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Sum
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_sum
+          timeout: 30
+          max-score: 1
+
+      - name: Max_Min_Sum_Of_Empty
+        id: max_min_sum_of_empty
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Max_Min_Sum_Of_Empty
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_max_min_sum_of_empty
+          timeout: 30
+          max-score: 1
+
+      - name: Linear_Search
+        id: linear_search
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Linear_Search
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_linear_search
+          timeout: 180
+          max-score: 1
+
+      - name: Binary_Search
+        id: binary_search
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Binary_Search
+          setup-command: ''
+          command: python3 -m unittest tests_autograder.tests_all.TestDynamicArray.test_binary_search
+          timeout: 180
+          max-score: 1
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          INSTANTIATION_RESULTS: "${{ steps.instantiation.outputs.result }}"
+          DEFAULT_INITIAL_CAPACITY_RESULTS: "${{ steps.default_initial_capacity.outputs.result }}"
+          INITIALLY_EMPTY_RESULTS: "${{ steps.initially_empty.outputs.result }}"
+          INITIAL_LENGTH_RESULTS: "${{ steps.initial_length.outputs.result }}"
+          APPEND_ONE_VALUE_TO_EMPTY_RESULTS: "${{ steps.append_one_value_to_empty.outputs.result }}"
+          APPEND_TWO_VALUES_RESULTS: "${{ steps.append_two_values.outputs.result }}"
+          DATA_PROPERTY_RESULTS: "${{ steps.data_property.outputs.result }}"
+          DATA_OBJECT_REFERENCES_RESULTS: "${{ steps.data_object_references.outputs.result }}"
+          DATA_CAPACITY_RESULTS: "${{ steps.data_capacity.outputs.result }}"
+          APPEND_FIRST_VALUE_TO_INTERNAL_DATA_RESULTS: "${{ steps.append_first_value_to_internal_data.outputs.result }}"
+          RETRIEVE_FIRST_APPENDED_VALUE_RESULTS: "${{ steps.retrieve_first_appended_value.outputs.result }}"
+          NEXT_INDEX_RESULTS: "${{ steps.next_index.outputs.result }}"
+          NEXT_INDEX_APPEND_RESULTS: "${{ steps.next_index_append.outputs.result }}"
+          APPENDING_TWO_VALUES_INTERNAL_RESULTS: "${{ steps.appending_two_values_internal.outputs.result }}"
+          APPEND_TWO_VALUES_AGAIN_RESULTS: "${{ steps.append_two_values_again.outputs.result }}"
+          APPEND_FOUR_VALUES_RESULTS: "${{ steps.append_four_values.outputs.result }}"
+          IS_EMPTY_RESULTS: "${{ steps.is_empty.outputs.result }}"
+          CLEAR_RESULTS: "${{ steps.clear.outputs.result }}"
+          LEN_RESULTS: "${{ steps.len.outputs.result }}"
+          NEGATIVE_INDEX_RESULTS: "${{ steps.negative_index.outputs.result }}"
+          LARGE_INDEX_RESULTS: "${{ steps.large_index.outputs.result }}"
+          POP_RESULTS: "${{ steps.pop.outputs.result }}"
+          POP_EMPTY_RESULTS: "${{ steps.pop_empty.outputs.result }}"
+          DELETE_LAST_RESULTS: "${{ steps.delete_last.outputs.result }}"
+          DELETE_INVALID_INDEX_RESULTS: "${{ steps.delete_invalid_index.outputs.result }}"
+          DELETE_FIRST_RESULTS: "${{ steps.delete_first.outputs.result }}"
+          DELETE_MIDDLE_RESULTS: "${{ steps.delete_middle.outputs.result }}"
+          DELETE_EMPTY_RESULTS: "${{ steps.delete_empty.outputs.result }}"
+          INSERT_END_RESULTS: "${{ steps.insert_end.outputs.result }}"
+          INSERT_INVALID_INDEX_RESULTS: "${{ steps.insert_invalid_index.outputs.result }}"
+          INSERT_FIRST_RESULTS: "${{ steps.insert_first.outputs.result }}"
+          INSERT_MIDDLE_RESULTS: "${{ steps.insert_middle.outputs.result }}"
+          INSERT_EMPTY_RESULTS: "${{ steps.insert_empty.outputs.result }}"
+          EMPTY_NOT_FULL_RESULTS: "${{ steps.empty_not_full.outputs.result }}"
+          LESS_THAN_CAPACITY_RESULTS: "${{ steps.less_than_capacity.outputs.result }}"
+          FULL_RESULTS: "${{ steps.full.outputs.result }}"
+          APPEND_TO_FULL_RESULTS: "${{ steps.append_to_full.outputs.result }}"
+          NEW_CAPACITY_RESULTS: "${{ steps.new_capacity.outputs.result }}"
+          INSERT_TO_FULL_RESULTS: "${{ steps.insert_to_full.outputs.result }}"
+          MAX_RESULTS: "${{ steps.max.outputs.result }}"
+          MIN_RESULTS: "${{ steps.min.outputs.result }}"
+          SUM_RESULTS: "${{ steps.sum.outputs.result }}"
+          MAX_MIN_SUM_OF_EMPTY_RESULTS: "${{ steps.max_min_sum_of_empty.outputs.result }}"
+          LINEAR_SEARCH_RESULTS: "${{ steps.linear_search.outputs.result }}"
+          BINARY_SEARCH_RESULTS: "${{ steps.binary_search.outputs.result }}"
+        with:
+          runners: instantiation,default_initial_capacity,initially_empty,initial_length,append_one_value_to_empty,append_two_values,data_property,data_object_references,data_capacity,append_first_value_to_internal_data,retrieve_first_appended_value,next_index,next_index_append,appending_two_values_internal,append_two_values_again,append_four_values,is_empty,clear,len,negative_index,large_index,pop,pop_empty,delete_last,delete_invalid_index,delete_first,delete_middle,delete_empty,insert_end,insert_invalid_index,insert_first,insert_middle,insert_empty,empty_not_full,less_than_capacity,full,append_to_full,new_capacity,insert_to_full,max,min,sum,max_min_sum_of_empty,linear_search,binary_search
